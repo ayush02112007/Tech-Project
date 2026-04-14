@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In — NeoReach</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .auth-container::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+            opacity: 0.15;
+            z-index: -1;
+            animation: blob-pulse 8s infinite alternate ease-in-out;
+        }
+        .auth-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            padding: 3rem;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: var(--surface-light);
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px var(--primary-glow);
+        }
+        .auth-btn {
+            width: 100%;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <a href="index.html" class="logo">NeoReach</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="search.html">Search Creators</a></li>
+                <li><a href="dashboard.html">Campaign Dashboard</a></li>
+            </ul>
+        </nav>
+        <div>
+            <a href="book-demo.html" class="btn-primary">Book Demo</a>
+        </div>
+    </header>
+
+    <main style="margin-top: 0;">
+        <section class="auth-container">
+            <div class="auth-card fade-in visible">
+                <h2>Welcome Back</h2>
+                <p style="color:var(--text-muted); margin-top: 0.5rem;">Access your campaign dashboard</p>
+                
+                <form class="auth-form" action="dashboard.html" method="get">
+                    <div class="form-group">
+                        <label for="email">Work Email</label>
+                        <input type="email" id="email" name="email" placeholder="you@company.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn-primary auth-btn">Log In</button>
+                </form>
+                
+                <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--text-muted);">
+                    Don't have an enterprise account? <a href="book-demo.html" style="color: var(--primary-color); text-decoration: none;">Book a demo</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

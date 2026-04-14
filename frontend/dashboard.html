@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Dashboard — NeoReach</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+        @media (max-width: 768px) {
+            .dashboard-grid { grid-template-columns: 1fr; }
+        }
+        .panel {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .stat-box {
+            background: var(--surface-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        /* Chart Mockup */
+        .chart-placeholder {
+            height: 300px;
+            border-left: 2px solid var(--border-color);
+            border-bottom: 2px solid var(--border-color);
+            position: relative;
+            margin-top: 2rem;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 1rem;
+            gap: 2rem;
+            justify-content: space-around;
+        }
+        .bar {
+            width: 40px;
+            background: linear-gradient(to top, var(--primary-color), var(--accent-color));
+            border-radius: 4px 4px 0 0;
+            animation: grow 1.5s ease-out forwards;
+            transform-origin: bottom;
+        }
+        @keyframes grow {
+            0% { transform: scaleY(0); }
+            100% { transform: scaleY(1); }
+        }
+        .recent-activity li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            list-style: none;
+        }
+        .recent-activity li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <a href="index.html" class="logo">NeoReach</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="search.html">Search Creators</a></li>
+                <li><a href="dashboard.html">Campaign Dashboard</a></li>
+            </ul>
+        </nav>
+        <div>
+            <div class="avatar" style="width: 40px; height: 40px; font-size: 1rem; display:inline-flex; border-radius:50%; background:var(--accent-color); align-items:center; justify-content:center;">RP</div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h1 class="fade-in" style="margin-bottom: 2rem;">Campaign Overview</h1>
+            
+            <div class="dashboard-grid fade-in">
+                
+                <!-- Main Analytics -->
+                <div class="panel">
+                    <h3>Performance Metrics</h3>
+                    <p style="color:var(--text-muted); margin-bottom: 1rem;">last 30 days</p>
+                    
+                    <div class="stat-grid">
+                        <div class="stat-box">
+                            <div class="stat-value">4.2M</div>
+                            <div>Total Impressions</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">124K</div>
+                            <div>Link Clicks</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">3.4x</div>
+                            <div>Avg. ROI</div>
+                        </div>
+                    </div>
+
+                    <!-- CSS Bar Chart Mockup -->
+                    <h4 style="margin-top: 3rem;">Engagement Trend</h4>
+                    <div class="chart-placeholder">
+                        <div class="bar" style="height: 40%;"></div>
+                        <div class="bar" style="height: 60%;"></div>
+                        <div class="bar" style="height: 30%;"></div>
+                        <div class="bar" style="height: 80%;"></div>
+                        <div class="bar" style="height: 50%;"></div>
+                        <div class="bar" style="height: 95%;"></div>
+                    </div>
+                </div>
+
+                <!-- Side Panel -->
+                <div class="panel">
+                    <h3>Recent Activity</h3>
+                    <ul class="recent-activity" style="margin-top: 1rem;">
+                        <li><strong>Content Approved</strong><br><span style="color:var(--text-muted); font-size:0.9rem;">Alex Studio uploaded draft for 'Summer Tech'</span></li>
+                        <li><strong>Payment Sent</strong><br><span style="color:var(--text-muted); font-size:0.9rem;">$4,500 transferred to Maria Wellness</span></li>
+                        <li><strong>Campaign Live</strong><br><span style="color:var(--text-muted); font-size:0.9rem;">'Back to School' initiated on TikTok</span></li>
+                        <li><strong>Contract Signed</strong><br><span style="color:var(--text-muted); font-size:0.9rem;">The Coding Guy accepted terms</span></li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

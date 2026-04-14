@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Creators — NeoReach</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+        }
+        .search-bar {
+            display: flex;
+            gap: 1rem;
+        }
+        .search-input {
+            flex: 1;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: var(--surface-color);
+            color: white;
+            font-size: 1.1rem;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px var(--primary-glow);
+        }
+        .creator-card {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--surface-light);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+        .creator-card:hover {
+            transform: scale(1.02);
+            border-color: var(--accent-color);
+        }
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .creator-info h3 { margin-bottom: 0.25rem; }
+        .creator-stats {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <a href="index.html" class="logo">NeoReach</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="search.html">Search Creators</a></li>
+                <li><a href="dashboard.html">Campaign Dashboard</a></li>
+            </ul>
+        </nav>
+        <div>
+            <a href="book-demo.html" class="btn-primary">Book Demo</a>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="search-container fade-in">
+                <h2 style="margin-bottom: 1rem;">Discover Content Creators</h2>
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="Search by niche, location, or keyword (e.g. 'Tech Reviewers')">
+                    <button class="btn-primary">Search</button>
+                </div>
+            </div>
+
+            <!-- Search Results -->
+            <div class="fade-in">
+                <p style="color:var(--text-muted); margin-bottom: 1rem;">Showing top matches (Mocking data)</p>
+
+                <div class="creator-card">
+                    <div class="avatar">AS</div>
+                    <div class="creator-info">
+                        <h3>Alex Studio</h3>
+                        <p style="color:var(--text-muted);">Tech & Gadget Reviewer</p>
+                        <div class="creator-stats">
+                            <span>👥 1.2M Followers</span>
+                            <span>🔥 8.5% Engagement</span>
+                            <span>📍 USA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="creator-card">
+                    <div class="avatar">MW</div>
+                    <div class="creator-info">
+                        <h3>Maria Wellness</h3>
+                        <p style="color:var(--text-muted);">Fitness & Lifestyle</p>
+                        <div class="creator-stats">
+                            <span>👥 850K Followers</span>
+                            <span>🔥 12.1% Engagement</span>
+                            <span>📍 UK</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="creator-card">
+                    <div class="avatar">TC</div>
+                    <div class="creator-info">
+                        <h3>The Coding Guy</h3>
+                        <p style="color:var(--text-muted);">Software & Development Tutorials</p>
+                        <div class="creator-stats">
+                            <span>👥 420K Followers</span>
+                            <span>🔥 5.2% Engagement</span>
+                            <span>📍 Canada</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

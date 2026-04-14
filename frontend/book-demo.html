@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Demo — NeoReach</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .demo-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        @media (max-width: 900px) {
+            .demo-container { grid-template-columns: 1fr; }
+        }
+        .demo-info h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        .demo-info ul {
+            list-style: none;
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .demo-info li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            font-size: 1.1rem;
+        }
+        .demo-info li span.icon {
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--primary-color);
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+        .auth-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            border-radius: 12px;
+            width: 100%;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: var(--surface-light);
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px var(--primary-glow);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <a href="index.html" class="logo">NeoReach</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="search.html">Search Creators</a></li>
+                <li><a href="dashboard.html">Campaign Dashboard</a></li>
+            </ul>
+        </nav>
+        <div>
+            <a href="login.html" class="btn-secondary">Log In</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="demo-container">
+            <!-- Left Info -->
+            <div class="demo-info fade-in visible">
+                <h1>Scale your influencer marketing program.</h1>
+                <p style="color:var(--text-muted); font-size:1.2rem;">Schedule a 1-on-1 walkthrough with our enterprise specialists to see how NeoReach can transform your performance campaigns.</p>
+                
+                <ul>
+                    <li>
+                        <span class="icon">✓</span>
+                        <div>
+                            <strong>Full platform walkthrough</strong><br>
+                            <span style="color:var(--text-muted); font-size: 0.9rem;">Tailored to your brand's unique goals and KPIs.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon">✓</span>
+                        <div>
+                            <strong>Discover 5M+ Creator Profiles</strong><br>
+                            <span style="color:var(--text-muted); font-size: 0.9rem;">See how we match you with the highest-converting influencers.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon">✓</span>
+                        <div>
+                            <strong>Automated Workflows</strong><br>
+                            <span style="color:var(--text-muted); font-size: 0.9rem;">Preview our contract management and global payout systems.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right Form -->
+            <div class="auth-card fade-in visible">
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Request Demo</h3>
+                <form class="auth-form" action="index.html">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" placeholder="Acme Corp" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Work Email</label>
+                        <input type="email" id="email" placeholder="john@acme.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="budget">Monthly Budget</label>
+                        <input type="text" id="budget" placeholder="$10,000+" required>
+                    </div>
+                    <button type="button" class="btn-primary" style="width: 100%;" onclick="alert('Demo request sent! Our team will contact you shortly.'); window.location.href='index.html';">Schedule Demo</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
